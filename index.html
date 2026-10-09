@@ -1,0 +1,348 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Muhamad Fachri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-bleed hero over a live perspective grid, then a single 1080px column of left-labelled sections */
+:root{
+  --bg:#080c12; --surface:#0e1520; --line:#1d2a3a; --fg:#e6edf5; --muted:#8b9bb0;
+  --accent:#5ee1d6; --accent-2:#f2a65a; --glow:rgba(94,225,214,.18);
+  --f-display:"Unbounded", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f3f6f9; --surface:#ffffff; --line:#d5dde7; --fg:#0d1621; --muted:#53647a;
+  --accent:#0b8f86; --accent-2:#b5621a; --glow:rgba(11,143,134,.12); color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f3f6f9; --surface:#ffffff; --line:#d5dde7; --fg:#0d1621; --muted:#53647a;
+  --accent:#0b8f86; --accent-2:#b5621a; --glow:rgba(11,143,134,.12); color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+
+/* NAV */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:600 15px var(--f-display);letter-spacing:.04em;color:var(--fg);text-decoration:none}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--fg)}
+@media (max-width:640px){nav ul{display:none}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#grid{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 70% at 20% 30%,var(--glow),transparent 70%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(72px,12vw,140px) clamp(56px,8vw,96px)}
+.status{display:inline-flex;align-items:center;gap:10px;font:500 12px var(--f-mono);letter-spacing:.06em;
+  color:var(--fg);border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 80%,transparent);
+  padding:7px 14px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font:800 clamp(40px,9vw,104px)/.95 var(--f-display);letter-spacing:-.02em;margin:28px 0 0;text-wrap:balance}
+h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--fg)}
+.role{font:400 clamp(17px,2.4vw,22px)/1.4 var(--f-body);color:var(--muted);margin:24px 0 0;max-width:36ch}
+.role b{color:var(--fg);font-weight:500}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{font:500 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  padding:13px 20px;border-radius:6px;border:1px solid var(--line);color:var(--fg);background:transparent;cursor:pointer;
+  transition:border-color .2s,transform .2s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:48px;font:400 12px var(--f-mono);color:var(--muted);letter-spacing:.04em}
+.meta span::before{content:"› ";color:var(--accent)}
+
+/* SECTIONS */
+section{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,4vw,56px)}
+.sec > *{min-width:0}
+@media (max-width:760px){.sec{grid-template-columns:1fr}}
+.label{font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);position:sticky;top:90px;align-self:start}
+.label small{display:block;color:var(--muted);letter-spacing:.06em;margin-top:6px;text-transform:none}
+@media (max-width:760px){.label{position:static}}
+h2{font:600 clamp(24px,3.4vw,36px)/1.2 var(--f-display);margin:0 0 20px;letter-spacing:-.01em;text-wrap:balance}
+p.lead{font-size:clamp(17px,1.8vw,19px);max-width:62ch;margin:0;color:var(--fg)}
+p.lead + p{color:var(--muted);max-width:62ch}
+
+/* TERMINAL */
+.term{margin-top:36px;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.term-bar{display:flex;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);align-items:center}
+.term-bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.term-bar span{margin-left:10px;font:400 12px var(--f-mono);color:var(--muted)}
+.term pre{margin:0;padding:18px 20px;font:400 13.5px/1.75 var(--f-mono);overflow-x:auto;color:var(--fg)}
+.k{color:var(--accent)}.s{color:var(--accent-2)}.c{color:var(--muted)}
+.caret{display:inline-block;width:8px;height:1.1em;vertical-align:-3px;background:var(--accent);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* TIMELINE */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.job{position:relative;padding:24px 24px 24px 28px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.job::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:var(--line)}
+.job.now::before{background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.job-head{display:flex;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;align-items:baseline}
+.job h3{font:600 18px/1.3 var(--f-display);margin:0}
+.job .org{color:var(--muted);font-size:15px;margin-top:2px}
+.when{font:500 12px var(--f-mono);letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.job.now .when{color:var(--accent)}
+.job ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.job li{padding-left:20px;position:relative;color:var(--fg);font-size:15px}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--accent)}
+
+/* STACK */
+.stack{display:grid;gap:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px 24px;padding-block:18px;border-bottom:1px solid var(--line);align-items:start}
+.row > *{min-width:0}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.row h4{margin:4px 0 0;font:500 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 13px var(--f-mono);padding:6px 12px;border:1px solid var(--line);border-radius:4px;color:var(--fg);
+  transition:border-color .2s,color .2s,background .2s}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--glow)}
+.chip em{font-style:normal;color:var(--muted);font-size:11px;margin-left:6px}
+
+/* GRID CARDS */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{padding:22px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.card h3{font:600 16px/1.35 var(--f-display);margin:0}
+.card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.card .when{display:block;margin-top:14px}
+dl.kv{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:620px){dl.kv{grid-template-columns:1fr}}
+dl.kv div{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+dl.kv dt{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+dl.kv dd{margin:8px 0 0;font-size:16px}
+.sub{margin-top:40px}
+.sub h3{font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+
+/* CONTACT */
+.contact h2{font-size:clamp(30px,5.5vw,60px);line-height:1.05}
+.contact h2 span{color:var(--accent)}
+.links{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.link{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.link dt{font:500 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.link dd{margin:0;display:flex;align-items:center;gap:12px;font:500 15px var(--f-mono);min-width:0;word-break:break-all}
+.todo{color:var(--accent-2)}
+.copy{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--muted);cursor:pointer}
+.copy:hover{color:var(--accent);border-color:var(--accent)}
+footer{padding-block:28px;font:400 12px var(--f-mono);color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* entrance */
+.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.32s}
+@keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">fachri<span>.dev</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="grid" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="status rise"><span class="dot"></span>Available for new projects · UTC+7</div>
+    <h1 class="rise d1">Muhamad<br><span class="outline">Fachri</span></h1>
+    <p class="role rise d2"><b>Software Developer</b> &amp; <b>Freelance Programmer</b> building clean, scalable web applications.</p>
+    <div class="cta rise d3">
+      <a class="btn primary" href="#contact">Start a project</a>
+      <a class="btn" href="https://github.com/Fachri27" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/muhamad-fachri-514497276/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="meta rise d4">
+      <span>Depok, West Java, Indonesia</span>
+      <span>Programmer @ Auriga Nusantara</span>
+      <span>Remote · Worldwide</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about"><div class="wrap sec">
+    <div class="label">About<small>who I am</small></div>
+    <div>
+      <h2>I write code that is easy to read, test and grow.</h2>
+      <p class="lead">Motivated Software Developer and Freelance Programmer with hands-on experience in application development at Auriga Nusantara and administrative system management at Frilsa.</p>
+      <p>Currently pursuing a Bachelor's degree in Informatics at Universitas Siber Asia, with a technical foundation from SMK Citra Negara (Software Engineering). I care about clean, efficient code and scalable digital solutions for clients worldwide.</p>
+      <div class="term" role="img" aria-label="Profile summary shown as a terminal">
+        <div class="term-bar"><i></i><i></i><i></i><span>~/fachri — zsh</span></div>
+<pre><span class="c">$</span> whoami --json
+{
+  <span class="k">"name"</span>:     <span class="s">"Muhamad Fachri"</span>,
+  <span class="k">"role"</span>:     <span class="s">"Software Developer"</span>,
+  <span class="k">"stack"</span>:    [<span class="s">"PHP"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Go"</span>, <span class="s">"Python"</span>],
+  <span class="k">"db"</span>:       [<span class="s">"MySQL"</span>, <span class="s">"Postgres"</span>],
+  <span class="k">"timezone"</span>: <span class="s">"Asia/Jakarta (UTC+7)"</span>,
+  <span class="k">"mode"</span>:     <span class="s">"remote / freelance / contract"</span>
+}
+<span class="c">$</span> <span class="caret"></span></pre>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="experience"><div class="wrap sec">
+    <div class="label">Experience<small>most recent first</small></div>
+    <div>
+      <h2>Where I've worked</h2>
+      <ol class="tl">
+        <li class="job now">
+          <div class="job-head">
+            <div><h3>Programmer</h3><div class="org">Auriga Nusantara</div></div>
+            <span class="when">SEP 2025 — PRESENT</span>
+          </div>
+          <ul>
+            <li>Develop and maintain software applications aligned with company requirements</li>
+            <li>Write clean, scalable, and well-documented code across multiple projects</li>
+            <li>Collaborate with cross-functional teams to implement new features and resolve bugs</li>
+            <li>Conduct thorough testing and debugging to ensure high-quality software delivery</li>
+          </ul>
+        </li>
+        <li class="job">
+          <div class="job-head">
+            <div><h3>Administrative Staff</h3><div class="org">Frilsa (Home Business)</div></div>
+            <span class="when">SEP 2023 — AUG 2025</span>
+          </div>
+          <ul>
+            <li>Managed day-to-day administrative operations and business records</li>
+            <li>Operated and maintained computer systems and databases for business tracking</li>
+            <li>Produced reports and documentation to support operational efficiency</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div></section>
+
+  <section id="stack"><div class="wrap sec">
+    <div class="label">Stack<small>tools I use daily</small></div>
+    <div>
+      <h2>Technical skills</h2>
+      <div class="stack">
+        <div class="row"><h4>Languages</h4><div class="chips">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Go</span></div></div>
+        <div class="row"><h4>Frameworks</h4><div class="chips">
+          <span class="chip">Laravel<em>basic</em></span><span class="chip">Livewire</span><span class="chip">Alpine.js</span><span class="chip">Express</span><span class="chip">Svelte</span><span class="chip">Tailwind CSS</span><span class="chip">Bootstrap</span></div></div>
+        <div class="row"><h4>Databases</h4><div class="chips">
+          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span></div></div>
+        <div class="row"><h4>Tools</h4><div class="chips">
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Linux CLI</span></div></div>
+        <div class="row"><h4>Soft skills</h4><div class="chips">
+          <span class="chip">Problem solving</span><span class="chip">Team collaboration</span><span class="chip">Self-directed work</span><span class="chip">Time management</span></div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="education"><div class="wrap sec">
+    <div class="label">Education<small>&amp; languages</small></div>
+    <div>
+      <h2>Education</h2>
+      <div class="cards">
+        <div class="card"><h3>Bachelor's Degree — Informatics</h3><p>Universitas Siber Asia, Indonesia</p><span class="when">2023 — PRESENT</span></div>
+        <div class="card"><h3>Vocational High School — Software Engineering (RPL)</h3><p>SMK Citra Negara, Indonesia</p><span class="when">GRADUATED 2023</span></div>
+      </div>
+      <div class="sub">
+        <h3>Languages</h3>
+        <dl class="kv">
+          <div><dt>Indonesian</dt><dd>Native / full professional proficiency</dd></div>
+          <div><dt>English</dt><dd>Professional working proficiency (reading &amp; writing)</dd></div>
+        </dl>
+      </div>
+      <div class="sub">
+        <h3>Work preferences</h3>
+        <dl class="kv">
+          <div><dt>Mode</dt><dd>Remote · Freelance · Contract</dd></div>
+          <div><dt>Hours</dt><dd>Flexible, can align with client timezone</dd></div>
+          <div><dt>Location</dt><dd>Depok, West Java, Indonesia (UTC+7)</dd></div>
+          <div><dt>Availability</dt><dd>Immediately available for new projects</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="contact"><div class="wrap sec">
+    <div class="label">Contact<small>let's talk</small></div>
+    <div>
+      <h2>Have a project in mind? <span>Let's build it.</span></h2>
+      <p class="lead" style="color:var(--muted)">Open to remote, freelance and contract work. I usually reply within one working day.</p>
+      <dl class="links">
+        <div class="link"><dt>Email</dt><dd><span id="email">mfachri271004@gmail.com</span><button class="copy" data-copy="email" type="button">Copy</button></dd></div>
+        <div class="link"><dt>GitHub</dt><dd><a href="https://github.com/Fachri27" target="_blank" rel="noopener">github.com/Fachri27 ↗</a></dd></div>
+        <div class="link"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/muhamad-fachri-514497276/" target="_blank" rel="noopener">in/muhamad-fachri-514497276 ↗</a></dd></div>
+        <div class="link"><dt>Based in</dt><dd>Depok, Indonesia · UTC+7</dd></div>
+      </dl>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Muhamad Fachri</span><span id="clock">Depok —</span></div></footer>
+
+<script>
+// Live Depok time in footer
+(function(){
+  const el=document.getElementById('clock');
+  function tick(){try{el.textContent='Depok · '+new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit'})+' WIB'}catch(e){}}
+  tick();setInterval(tick,30000);
+})();
+
+// Copy buttons
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+  const t=document.getElementById(b.dataset.copy).textContent;
+  const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1600)};
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(done).catch(sel)}else sel();
+  function sel(){const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);}
+}));
+
+// Perspective grid + drifting nodes
+(function(){
+  const c=document.getElementById('grid'),x=c.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,dpr,nodes=[],t=0,mx=.5,my=.5;
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  function size(){dpr=Math.min(devicePixelRatio||1,2);w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    nodes=Array.from({length:Math.round(w/28)},()=>({x:Math.random()*w,y:Math.random()*h*.55,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.15,r:Math.random()*1.6+.6}))}
+  function draw(){
+    const acc=css('--accent'),line=css('--line');
+    x.clearRect(0,0,w,h);
+    const hz=h*.58, cx=w*(.5+(mx-.5)*.15);
+    // horizon fade
+    const g=x.createLinearGradient(0,hz,0,h);g.addColorStop(0,'transparent');g.addColorStop(1,acc);
+    x.globalAlpha=.06;x.fillStyle=g;x.fillRect(0,hz,w,h-hz);x.globalAlpha=1;
+    x.strokeStyle=line;x.lineWidth=1;
+    // vertical rays
+    for(let i=-20;i<=20;i++){x.beginPath();x.moveTo(cx+i*18,hz);x.lineTo(cx+i*w*.12,h);x.stroke()}
+    // horizontal lines moving toward viewer
+    for(let i=0;i<14;i++){const p=((i+t)%14)/14,y=hz+(h-hz)*p*p;x.globalAlpha=Math.min(1,p*1.6);x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke()}
+    x.globalAlpha=1;
+    // nodes + links
+    for(const n of nodes){n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>w)n.vx*=-1;if(n.y<0||n.y>hz)n.vy*=-1}
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){x.globalAlpha=(1-d/120)*.35;x.strokeStyle=acc;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+    x.fillStyle=acc;for(const n of nodes){x.globalAlpha=.8;x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fill()}
+    x.globalAlpha=1;
+  }
+  function loop(){t+=.012;draw();if(!reduce)requestAnimationFrame(loop)}
+  addEventListener('resize',()=>{size();if(reduce)draw()});
+  addEventListener('pointermove',e=>{mx=e.clientX/innerWidth;my=e.clientY/innerHeight});
+  size();loop();
+})();
+</script>
+
+</body></html>
